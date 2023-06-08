@@ -25,16 +25,21 @@ namespace LibraryAPI.Data
 
         public DbSet<LibraryAPI.Models.Reader>? Reader { get; set; }
 
+		// Tabela "Wypożyczenia"
         public DbSet<LibraryAPI.Models.ReaderBook>? ReaderBook { get; set; }
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
+			// Konfiguracja dla Wishlist
 			modelBuilder.Entity<Reader>()
-				.HasMany(e => e.FavouriteAuthors)
-				.WithMany(e => e.Readers)
-				.UsingEntity<ReaderAuthor>();
-		}
-		public DbSet<LibraryAPI.Models.ReaderAuthor>? ReaderAuthor { get; set; }
+				.HasMany(e => e.Wishlist)
+				.WithMany(e => e.WishingReaders);
 
-        //testowa wiadomosc 2
+			// Mechanizm zautomatyzowanego tworzenia tabeli many-to-many ReaderBookScore - oceny książek przez czytelników
+			modelBuilder.Entity<Reader>()
+				.HasMany(e => e.ScoredBooks)
+				.WithMany(e => e.ScoringReaders)
+				.UsingEntity<ReaderBookScore>();
+		}
+		public DbSet<LibraryAPI.Models.ReaderBookScore>? ReaderBookScore { get; set; }
 	}
 }

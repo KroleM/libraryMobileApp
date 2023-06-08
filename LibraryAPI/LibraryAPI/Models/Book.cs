@@ -16,6 +16,10 @@ namespace LibraryAPI.Models
 		public int CategoryId { get; set; }
 		[ForeignKey(nameof(CategoryId))]
 		public virtual Category? Category { get; set; }
-		public virtual ICollection<ReaderBook>? ReaderBooks { get; set; }
-	}
+		public virtual ICollection<ReaderBook>? ReaderBooks { get; set; }   // kolekcja do wypożyczeń
+		public virtual ICollection<Reader>? WishingReaders { get; set; }
+		public virtual ICollection<ReaderBookScore>? ReaderBookScores { get; set; }		// odwołanie do tabeli z ocenami książek
+		public virtual ICollection<Reader>? ScoringReaders { get; set; }	//czytelnicy, którzy ocenili książkę
+        public double? TotalScore { get; set; }
+    }
 }

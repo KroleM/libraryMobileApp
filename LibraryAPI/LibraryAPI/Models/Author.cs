@@ -10,6 +10,6 @@ namespace LibraryAPI.Models
 		[Column(TypeName = "DATE")]
 		public DateTime BirthDate { get; set; }
         public virtual ICollection<Book>? Books { get; set; }
-        public virtual ICollection<Reader>? Readers { get; set; } // Czytelnicy, którzy mają autora "w ulubionych" - można policzyć ilu ich jest.
+        //public virtual ICollection<Reader>? Readers { get; set; } // Czytelnicy, którzy mają autora "w ulubionych" - można policzyć ilu ich jest.
     }
 }
