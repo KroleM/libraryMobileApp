@@ -1,4 +1,5 @@
-﻿using LibraryMobile.Views;
+﻿using LibraryMobile.ViewModels.Abstract;
+using LibraryMobile.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -6,7 +7,7 @@ using Xamarin.Forms;
 
 namespace LibraryMobile.ViewModels
 {
-	public class LoginViewModel : BaseViewModel
+    public class LoginViewModel : BaseViewModel
 	{
 		public Command LoginCommand { get; }
 
