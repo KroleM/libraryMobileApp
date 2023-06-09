@@ -2,7 +2,7 @@
 
 namespace LibraryAPI.Models
 {
-	public class ReaderBookScore
+	public class ReaderBookScore : BaseDatatable
 	{
 		public int ReaderId { get; set; }
 		[ForeignKey(nameof(ReaderId))]
