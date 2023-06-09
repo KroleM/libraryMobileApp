@@ -13,7 +13,13 @@ namespace LibraryMobile
 		{
 			InitializeComponent();
 
-			//DependencyService.Register<MockDataStore>();
+			DependencyService.Register<AuthorDataStore>();
+			DependencyService.Register<BookDataStore>();
+			DependencyService.Register<CategoryDataStore>();
+			DependencyService.Register<PublisherDataStore>();
+			DependencyService.Register<ReaderDataStore>();
+			DependencyService.Register<ReaderBookDataStore>();
+			DependencyService.Register<ReaderBookScoreDataStore>();
 			MainPage = new AppShell();
 		}
 
