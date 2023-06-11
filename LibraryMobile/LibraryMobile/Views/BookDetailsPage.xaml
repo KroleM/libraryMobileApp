@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LibraryMobile.Views.BookDetailsPage"
+             xmlns:custom="clr-namespace:LibraryMobile;assembly=LibraryMobile"
+             BackgroundColor="Black"
+             Title="Book Details"
+             >
+
+        <!--
+        Text="{Binding Title}" 
+        Text="{Binding Author}" 
+        Text="{Binding Year}" 
+        Text="{Binding Publisher}" 
+        Text="{Binding Description}" 
+        Clicked="OnRentButtonClicked" -->
+
+        <StackLayout Padding="40,0,0,0">
+            <StackLayout >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="cat.jpg"  HeightRequest="180" WidthRequest="180" HorizontalOptions="Start" />
+                    <StackLayout Grid.Column="1" Padding="0,50,0,0">
+
+                    <custom:CustomButton Text="To favourites"
+                TextColor="DeepSkyBlue"
+                WidthRequest="210"
+                CornerRadius="10"
+                HorizontalOptions="Start" 
+                BorderWidth="0"
+                BorderColor="DeepSkyBlue" BackgroundColor="Black" 
+                ImageSource="heart.png" FontSize="Caption"
+                FontFamily="Quicksand-Light"
+                />
+
+
+                    <custom:CustomButton Text="To wishlist"
+                TextColor="DeepSkyBlue"
+                WidthRequest="200"
+                CornerRadius="10"
+                HorizontalOptions="Start" 
+                BorderWidth="0"
+                BorderColor="DeepSkyBlue" BackgroundColor="Black"
+                ImageSource="wishlist.png" FontSize="Caption" FontFamily="Quicksand-Light"
+                            />
+                    </StackLayout>
+
+
+                </Grid>
+
+
+            </StackLayout>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Text="Title:" FontSize="Small" TextColor="DeepSkyBlue" FontFamily="Quicksand-Light"/>
+
+                <Label Grid.Row="2" Text="Author:" FontSize="Caption" TextColor="DeepSkyBlue" FontFamily="Quicksand-Light"/>
+
+                <Label Grid.Row="4" Text="Year:" FontSize="Caption" TextColor="DeepSkyBlue" FontFamily="Quicksand-Light"/>
+
+                <Label Grid.Row="6" Text="Publisher:" FontSize="Caption" TextColor="DeepSkyBlue" FontFamily="Quicksand-Light"/>
+
+                <Label Grid.Row="8" Text="Description:" FontSize="Caption" TextColor="DeepSkyBlue" FontFamily="Quicksand-Light"/>
+
+                <Label Grid.Row="10" Text="ISBN:" FontSize="Caption" TextColor="DeepSkyBlue" FontFamily="Quicksand-Light"/>
+            </Grid>
+            <custom:CustomButton Text="Rent"
+                TextColor="DeepSkyBlue"
+                WidthRequest="120"
+                CornerRadius="10"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"
+                BorderWidth="1"
+                FontFamily="Quicksand-Light"
+                BorderColor="DeepSkyBlue" BackgroundColor="Black"/>
+
+            <StackLayout Margin="0,30,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
+                       Margin="0,0,5,0"
+                    Text="Rate book: "
+                       TextColor="DeepSkyBlue"
+                       />
+                <ImageButton Grid.Column="1"
+                             
+                             Source="star.png"
+                 />
+                <ImageButton Grid.Column="2"
+                             
+                             Source="star.png"
+                 />
+                <ImageButton Grid.Column="3"
+                             
+                             Source="star.png"
+                 />
+                <ImageButton Grid.Column="4"
+                             
+                             Source="star.png"
+                 />
+                <ImageButton Grid.Column="5"
+                             
+                             Source="star.png"
+                 />
+            </Grid>
+            </StackLayout>
+            
+        </StackLayout>
+
+</ContentPage>

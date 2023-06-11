@@ -83,6 +83,19 @@
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>
 
+    <FlyoutItem Title="Browse" Icon="icon_feed.png">
+        <ShellContent Route="AllBooksPage" ContentTemplate="{DataTemplate local:AllBooksPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Register" Icon="icon_feed.png">
+        <ShellContent Route="RegisterPage" ContentTemplate="{DataTemplate local:RegisterPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="My shelf" Icon="icon_feed.png">
+        <ShellContent Route="MyShelfPage" ContentTemplate="{DataTemplate local:MyShelfPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Details" Icon="icon_feed.png">
+        <ShellContent Route="BookDetailsPage" ContentTemplate="{DataTemplate local:BookDetailsPage}" />
+    </FlyoutItem>
+
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">

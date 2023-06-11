@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LibraryMobile.Views.AllBooksPage"
+             xmlns:custom="clr-namespace:LibraryMobile;assembly=LibraryMobile"
+             BackgroundColor="Black"
+             Title="Book List"
+             >
+    <ContentPage.Content>
+        <StackLayout Padding="40" >
+
+            <Frame CornerRadius="5" BorderColor="DeepSkyBlue" Padding="0">
+                <Entry Placeholder="Wyszukaj książkę..."
+                   PlaceholderColor="DarkGray"
+                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="Transparent"
+                   TextColor="WhiteSmoke" FontFamily="Quicksand-Light"
+                   Margin="0,0,0,0"
+             />
+            </Frame>
+
+            <Grid Padding="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0"
+                       Text="Search by category:"
+                       TextColor="DarkGray"
+                       FontSize="13"
+                       VerticalOptions="Center"
+                       Margin="0,0,5,0" />
+
+                <Frame Grid.Column="1" Grid.Row="0" CornerRadius="5" BorderColor="DeepSkyBlue" Padding="0">
+                    <Picker 
+                        FontSize="14"
+                        TextColor="WhiteSmoke"
+                        BackgroundColor="Transparent"
+                        VerticalOptions="Center" IsVisible="True"
+                        InputTransparent="False"
+                        >
+
+                        <Picker.Style>
+                            <Style TargetType="Picker">
+                                <Setter Property="BackgroundColor" Value="Red" />
+                                <!-- Dodaj inne właściwości stylu, które chcesz dostosować -->
+                            </Style>
+                        </Picker.Style>
+
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Wszystkie</x:String>
+                                <x:String>Kategoria 1</x:String>
+                                <x:String>Kategoria 2</x:String>
+                                <x:String>Kategoria 3</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+                <custom:CustomButton Grid.Column="0" Grid.Row="1"
+                    Text="Search"
+                    TextColor="DeepSkyBlue"
+                    WidthRequest="120"
+                    CornerRadius="10"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="End"
+                    BorderWidth="1"
+                    FontFamily="Quicksand-Light"
+                    BorderColor="DeepSkyBlue" 
+                    BackgroundColor="Black"
+                 />
+
+                <custom:CustomButton Grid.Column="1" Grid.Row="1"
+                    ImageSource="clear.png"
+                    Text="Clear"
+                    WidthRequest="100"
+                    CornerRadius="10"
+                    HorizontalOptions="End" 
+                    VerticalOptions="End"
+                    TextColor="DeepSkyBlue"
+                    BorderWidth="0"
+                    FontFamily="Quicksand-Light"
+                    BorderColor="DeepSkyBlue" 
+                    BackgroundColor="Black"
+                     />
+
+            </Grid>
+
+            <BoxView Color="#095169" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="25"/>
+
+            <!--<ListView x:Name="bookListView"
+                      Margin="10,0"
+                      ItemsSource="{Binding Books}"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Title}" FontSize="Medium" />
+                                <Label Text="{Binding Author}" FontSize="Small" />
+                                <Label Text="{Binding Description}" FontSize="Small" />
+
+                                <Button Text="Details"
+                                        WidthRequest="80"
+                                        CornerRadius="10"
+                                        HorizontalOptions="End" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+
+            <ScrollView>
+                <StackLayout Margin="0,0,15,0">
+
+
+                    <Frame BorderColor="DeepSkyBlue"
+                   CornerRadius="5"
+                   Padding="4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="cat.jpg"
+                           Margin="10,0,20,0"
+                           HeightRequest="70"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center" />
+
+                            <StackLayout Grid.Row="0" Grid.Column="1">
+                                <Label Text="Title:"
+                               TextColor="DarkGray" 
+                               FontSize="12"
+                               FontFamily="Quicksand-Light"/>
+                                <Label Text="sample title:"
+                               TextColor="WhiteSmoke" 
+                               FontSize="12"
+                               FontFamily="Quicksand-Light"/>
+                                <Label Text="Author:"
+                               TextColor="DarkGray" 
+                               FontSize="12"
+                               FontFamily="Quicksand-Light"/>
+                                <Label Text="sample author"
+                               TextColor="WhiteSmoke" 
+                               FontSize="12"
+                               FontFamily="Quicksand-Light"/>
+                            </StackLayout>
+
+                            <BoxView Color="#095169"
+                             HeightRequest="1"
+                             HorizontalOptions="Fill"
+                             Grid.Row="1"
+                             Margin="5"
+                             Grid.ColumnSpan="2" />
+
+                            <Grid Grid.Column="0" Grid.Row="2" Margin="7,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="star.png"
+                                    Grid.Row="0"
+                                   Grid.Column="0"
+                                    Margin="0"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center" />
+                                <Label 
+                                Grid.Column="1"
+                                    Grid.Row="0"
+                                   Text="4.5" 
+                                   TextColor="DeepSkyBlue"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                   />
+                            </Grid>
+                                                     
+
+                            <custom:CustomButton Grid.Column="1" Grid.Row="2"
+                                Text="Details"
+                                TextColor="DeepSkyBlue"
+                                WidthRequest="120"
+                                CornerRadius="10"
+                                HorizontalOptions="End" 
+                                VerticalOptions="End"
+                                BorderWidth="1"
+                                FontFamily="Quicksand-Light"
+                                BorderColor="DeepSkyBlue" 
+                                BackgroundColor="Transparent"
+                                Margin="0,0,0,5" 
+                             />
+
+                        </Grid>
+                    </Frame>
+
+                </StackLayout>
+
+            </ScrollView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

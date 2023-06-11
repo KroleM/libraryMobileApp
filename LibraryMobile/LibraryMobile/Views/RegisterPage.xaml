@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:custom="clr-namespace:LibraryMobile;assembly=LibraryMobile"
              mc:Ignorable="d"
-             x:Class="LibraryMobile.Views.LoginPage"
+             x:Class="LibraryMobile.Views.RegisterPage"
              BackgroundColor="Black"
              Shell.NavBarIsVisible="False"
-             xmlns:custom="clr-namespace:LibraryMobile;assembly=LibraryMobile"
-    >
-
+             >
     <ContentPage.Content>
+
 
         <StackLayout Padding="60" VerticalOptions="Center">
 
@@ -34,10 +34,29 @@
                    Margin="0"
              />
             </Frame>
-
+            <Frame CornerRadius="5" BorderColor="DeepSkyBlue" Padding="0">
+                <Entry 
+                   Placeholder="Confirm Password" Text="{Binding ConfirmPassword}" IsPassword="True"
+                   PlaceholderColor="DarkGray"
+                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="Transparent"
+                   TextColor="WhiteSmoke" FontFamily="Quicksand-Light"
+                   Margin="0"
+             />
+            </Frame>
+            <Frame CornerRadius="5" BorderColor="DeepSkyBlue" Padding="0">
+                <Entry 
+                   Placeholder="Email" Text="{Binding Email}"
+                   PlaceholderColor="DarkGray"
+                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="Transparent"
+                   TextColor="WhiteSmoke" FontFamily="Quicksand-Light"
+                   Margin="0"
+             />
+            </Frame>
 
             <custom:CustomButton Grid.Column="0" Grid.Row="1" Margin="0,10,0,30"
-                Text="Log in"
+                Text="Register"
                 TextColor="DeepSkyBlue"
                 WidthRequest="120"
                 CornerRadius="10"
@@ -46,28 +65,17 @@
                 BorderWidth="1"
                 FontFamily="Quicksand-Light"
                 BorderColor="DeepSkyBlue" 
-                 
-                Command="{Binding LoginCommand}" 
+                BackgroundColor="Transparent"
+                Command="{Binding RegisterCommand}"
              />
-            <!--<Button.Effects>
-                    <local:ButtonMouseOverEffect />
-                    -->
-            <!-- Dodaj ten wiersz -->
-            <!--
-                </Button.Effects>-->
 
 
-
-
-            <Label Text="Don't have an account? Register ->" TextColor="DeepSkyBlue" VerticalOptions="Center">
+            <Label Text="Already have an account? Log in ->" TextColor="DeepSkyBlue" VerticalOptions="Center">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding GoToRegisterPageCommand}" />
+                    <TapGestureRecognizer Command="{Binding GoToLoginPageCommand}" />
                 </Label.GestureRecognizers>
             </Label>
 
         </StackLayout>
-
     </ContentPage.Content>
-
-
 </ContentPage>
